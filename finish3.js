@@ -169,7 +169,7 @@ function checkType() {
 function updateTimer() {
     const now = new Date();
     const elapsed = Math.floor((now - startTime) / 1000);
-    const remainingTime = 50 - elapsed;
+    const remainingTime = 20 - elapsed;
     document.getElementById('downTimer').innerText = `残り時間: ${remainingTime}秒`;
     if (remainingTime <= 0) {
         endoverGame();
@@ -210,7 +210,7 @@ function reGame() {
     input.focus();
     input.select();
     document.getElementById('overlay').remove();
-    startTime = new Date(new Date() - (50 - parseInt(document.getElementById('downTimer').innerText.split(' ')[1])) * 1000);
+    startTime = new Date(new Date() - (20 - parseInt(document.getElementById('downTimer').innerText.split(' ')[1])) * 1000);
     timerInterval = setInterval(updateTimer, 1000);
 }
 
